@@ -15,6 +15,7 @@ namespace App\Controllers;
  */
 
 use CodeIgniter\Controller;
+use CodeIgniter\I18n\Time;
 
 class BaseController extends Controller
 {
@@ -36,11 +37,15 @@ class BaseController extends Controller
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
+
 		//--------------------------------------------------------------------
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.:
 		// $this->session = \Config\Services::session();
+		// $this->komikModel = new \App\Models\KomikModel(); // Jika model digunakan diseluruh class
+		session();
+		date_default_timezone_set("Asia/Jakarta");
 	}
 
 }
